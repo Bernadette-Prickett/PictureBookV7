@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PictureBookV7", "PictureBookV7\PictureBookV7.csproj", "{CD0E63D9-F040-49F7-B7D2-105EDAD80611}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PictureBookV7.Tests", "PictureBookV7.Tests\PictureBookV7.Tests.csproj", "{EC9E143D-BB0C-4D9A-9074-4ADD19193453}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CD0E63D9-F040-49F7-B7D2-105EDAD80611}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD0E63D9-F040-49F7-B7D2-105EDAD80611}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD0E63D9-F040-49F7-B7D2-105EDAD80611}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD0E63D9-F040-49F7-B7D2-105EDAD80611}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC9E143D-BB0C-4D9A-9074-4ADD19193453}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC9E143D-BB0C-4D9A-9074-4ADD19193453}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC9E143D-BB0C-4D9A-9074-4ADD19193453}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC9E143D-BB0C-4D9A-9074-4ADD19193453}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
