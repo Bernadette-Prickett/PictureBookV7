@@ -38,3 +38,7 @@ C:\Users\Bernie\Desktop\HopefullyLASTOne\PictureBookV7\PictureBookV7\bin\Newtons
 C:\Users\Bernie\Desktop\HopefullyLASTOne\PictureBookV7\PictureBookV7\obj\Debug\PictureBookV7.csprojResolveAssemblyReference.cache
 C:\Users\Bernie\Desktop\HopefullyLASTOne\PictureBookV7\PictureBookV7\obj\Debug\PictureBookV7.dll
 C:\Users\Bernie\Desktop\HopefullyLASTOne\PictureBookV7\PictureBookV7\obj\Debug\PictureBookV7.pdb
+C:\Users\Bernie\Desktop\HopefullyLASTOne\PictureBookV7\PictureBookV7\bin\EntityFramework.dll
+C:\Users\Bernie\Desktop\HopefullyLASTOne\PictureBookV7\PictureBookV7\bin\EntityFramework.SqlServer.dll
+C:\Users\Bernie\Desktop\HopefullyLASTOne\PictureBookV7\PictureBookV7\bin\EntityFramework.xml
+C:\Users\Bernie\Desktop\HopefullyLASTOne\PictureBookV7\PictureBookV7\bin\EntityFramework.SqlServer.xml
