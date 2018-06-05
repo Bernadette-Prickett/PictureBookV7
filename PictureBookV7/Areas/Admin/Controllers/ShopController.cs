@@ -11,6 +11,7 @@ namespace PictureBookV7.Areas.Admin.Controllers
     public class ShopController : Controller
     {
         // GET: Admin/Shop/Categories
+        [HttpGet]
         public ActionResult Categories()
         {
             //Declare a list of models
@@ -24,6 +25,41 @@ namespace PictureBookV7.Areas.Admin.Controllers
 
                 //Return view with a list
                 return View(categoryVMList);
+        }
+
+        // Post: Admin/Shop/Categories
+        [HttpPost]
+        public string AddNewCategory(string catName)
+        {
+            //Declare id
+            string id;
+
+            using (Db db = new Db())
+            {
+
+                //Check that the category name hasn't been taken
+                if(db.Categories.Any(x => x.Name == catName))
+                    return "titletaken";                         
+                    
+
+                //Initialise the DTO
+                CategoryDTO dto = new CategoryDTO();
+
+                //Add to the DTO
+                dto.Name = catName;
+                dto.Slug = catName.Replace(" ", "-").ToLower();
+                dto.Sorting = 100;
+
+                //Save DTO
+                db.Categories.Add(dto);
+                db.SaveChanges();
+
+                //Get the id
+                id = dto.Id.ToString();
+            }
+
+            //Return id
+            return id;
         }
     }
 }
