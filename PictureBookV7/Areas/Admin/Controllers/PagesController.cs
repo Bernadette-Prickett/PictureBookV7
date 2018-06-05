@@ -226,5 +226,31 @@ namespace PictureBookV7.Areas.Admin.Controllers
             //Redirect
             return RedirectToAction("Index");
         }
+
+        // Post: Admin/Pages/ReorderPages
+        [HttpPost]
+        public ActionResult ReorderPages(int[] id)
+        {
+            using (Db db = new Db())
+            {
+                //Set initial count
+                int count = 1;
+
+                //Declare PageDTO
+                PageDTO dto;
+
+                //Set sorting for each page
+                foreach (var pageId in id)
+                {
+                    dto = db.Pages.Find(pageId);
+                    dto.Sorting = count;
+
+                    db.SaveChanges();
+
+                    count++;
+                }
+            }
+                return View();
+        }
     }
 }
