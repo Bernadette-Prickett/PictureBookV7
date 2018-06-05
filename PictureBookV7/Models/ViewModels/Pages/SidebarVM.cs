@@ -9,15 +9,18 @@ namespace PictureBookV7.Models.ViewModels.Pages
 {
     public class SidebarVM
     {
+        //Getters and Setters + Data Annotations
         public int Id { get; set; }
         [AllowHtml]
         public string Body { get; set; }
 
+        //Empty Constructor
         public SidebarVM()
         {
 
         }
 
+        //Overloaded Constructor
         public SidebarVM(SidebarDTO row)
         {
             Id = row.Id;

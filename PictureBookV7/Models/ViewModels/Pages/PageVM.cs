@@ -26,7 +26,7 @@ namespace PictureBookV7.Models.ViewModels.Pages
             HasSidebar = row.HasSidebar;
         }
 
-        //Added data annotations to specify if properties are required and their minimum/maximum length
+        //Getters and Setters + added Data Annotations to specify if properties are required and their minimum/maximum length
         public int Id { get; set; }
         [Required]
         [StringLength(50, MinimumLength = 3)]
