@@ -61,5 +61,24 @@ namespace PictureBookV7.Areas.Admin.Controllers
             //Return id
             return id;
         }
+
+        // Get Admin/Shop/DeleteCategory/id
+        public ActionResult DeleteCategory(int id)
+        {
+            using (Db db = new Db())
+            {
+                //Get the page
+                CategoryDTO dto = db.Categories.Find(id);
+
+                //Remove the category
+                db.Categories.Remove(dto);
+
+                //Save
+                db.SaveChanges();
+            }
+
+            //Redirect
+            return RedirectToAction("Categories");
+        }
     }
 }
