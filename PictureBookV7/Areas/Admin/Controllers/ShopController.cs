@@ -19,12 +19,14 @@ namespace PictureBookV7.Areas.Admin.Controllers
 
             using (Db db = new Db())
             {
-                //Initialise the list
-                categoryVMList = db.Categories.ToArray().OrderBy(x => x.Sorting).Select(x => new CategoryVM(x)).ToList();
+                //Initialise the list - 
+                //The .Where(x => !x.Deleted) only pulls back rows with Deleted = false
+                //Could also use .Where(x => x.Deleted == false)
+                categoryVMList = db.Categories.Where(x => !x.Deleted).ToArray().OrderBy(x => x.Sorting).Select(x => new CategoryVM(x)).ToList();
             }
 
-                //Return view with a list
-                return View(categoryVMList);
+            //Return view with a list
+            return View(categoryVMList);
         }
 
         // Post: Admin/Shop/AddNewCategory
@@ -70,8 +72,8 @@ namespace PictureBookV7.Areas.Admin.Controllers
                 //Get the page
                 CategoryDTO dto = db.Categories.Find(id);
 
-                //Remove the category
-                db.Categories.Remove(dto);
+                //Flag the category as deleted rather than actually delete the data as this can mess up reports
+                dto.Deleted = true;
 
                 //Save
                 db.SaveChanges();
