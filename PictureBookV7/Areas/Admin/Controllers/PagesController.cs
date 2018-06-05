@@ -181,8 +181,7 @@ namespace PictureBookV7.Areas.Admin.Controllers
             return RedirectToAction("EditPage");
         }
 
-        // Get Admin/Pages/PageDetails/id
-        [HttpGet]
+        // Get Admin/Pages/PageDetails/id        
         public ActionResult PageDetails(int id)
         {
 
@@ -207,6 +206,25 @@ namespace PictureBookV7.Areas.Admin.Controllers
 
             //Return view with model             
             return View(model);
+        }
+
+        // Get Admin/Pages/DeletePage/id
+        public ActionResult DeletePage(int id)
+        {
+            using (Db db = new Db())
+            {
+                //Get the page
+                PageDTO dto = db.Pages.Find(id);
+
+                //Remove the page
+                db.Pages.Remove(dto);
+
+                //Save
+                db.SaveChanges();
+            }
+
+            //Redirect
+            return RedirectToAction("Index");
         }
     }
 }
