@@ -180,5 +180,33 @@ namespace PictureBookV7.Areas.Admin.Controllers
             //Return the view
             return RedirectToAction("EditPage");
         }
+
+        // Get Admin/Pages/PageDetails/id
+        [HttpGet]
+        public ActionResult PageDetails(int id)
+        {
+
+            // Declare pageVM
+            PageVM model;
+
+            using (Db db = new Db())
+            {
+                //Get the page
+                PageDTO dto = db.Pages.Find(id);
+
+                //confirm page exists
+                if(dto == null)
+                {
+                    return Content("The page does not exist");
+                }
+
+                //Initialise the page
+                model = new PageVM(dto);
+
+            }
+
+            //Return view with model             
+            return View(model);
+        }
     }
 }
