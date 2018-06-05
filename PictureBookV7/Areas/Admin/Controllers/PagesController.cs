@@ -252,5 +252,49 @@ namespace PictureBookV7.Areas.Admin.Controllers
             }
                 return View();
         }
+
+        // Get Admin/Pages/EditSidebar
+        [HttpGet]
+        public ActionResult EditSidebar()
+        {
+            //Declare the model
+            SidebarVM model;
+
+            using (Db db = new Db())
+            {
+                //Get the DTO
+                SidebarDTO dto = db.Sidebar.Find(1);
+
+                //Initialise the model
+                model = new SidebarVM(dto);
+            }
+
+            //Return view with model
+            return View(model);
+        }
+
+        // Get Admin/Pages/EditSidebar
+        [HttpPost]
+        public ActionResult EditSidebar(SidebarVM model)
+        {
+
+            using (Db db = new Models.Data.Db())
+            {
+                //Get the DTO
+                SidebarDTO dto = db.Sidebar.Find(1);
+
+                //DTO the body
+                dto.Body = model.Body;
+
+                //Save
+                db.SaveChanges();
+            }
+
+            //Set TempData message
+            TempData["SuccessMessage"] = "The sidebar has been edited";
+
+            //Redirect
+            return RedirectToAction("EditSidebar");
+        }
     }
 }
