@@ -31,6 +31,7 @@ namespace PictureBookV7.Models.ViewModels.Pages
         [Required]
         [StringLength(50, MinimumLength = 3)]
         public string Title { get; set; }
+        [Display(Name ="URL")]
         public string Slug { get; set; }
         [Required]
         [StringLength(int.MaxValue, MinimumLength = 3)]

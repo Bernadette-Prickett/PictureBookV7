@@ -27,7 +27,7 @@ namespace PictureBookV7.Areas.Admin.Controllers
                 return View(categoryVMList);
         }
 
-        // Post: Admin/Shop/Categories
+        // Post: Admin/Shop/AddNewCategory
         [HttpPost]
         public string AddNewCategory(string catName)
         {
