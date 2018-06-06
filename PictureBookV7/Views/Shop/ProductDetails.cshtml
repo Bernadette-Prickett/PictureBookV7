@@ -43,7 +43,7 @@
 
                 $.get(url, { id: @Model.Id }, function (data)
                 {
-                    $("ajaxcart").html(data);
+                    $(".ajaxcart").html(data);
                 }).done (function()
                 {
                     $("span.loader").removeClass("ib");
