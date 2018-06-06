@@ -42,3 +42,7 @@ C:\Users\Bernie\Desktop\HopefullyLASTOne\PictureBookV7\PictureBookV7\bin\EntityF
 C:\Users\Bernie\Desktop\HopefullyLASTOne\PictureBookV7\PictureBookV7\bin\EntityFramework.SqlServer.dll
 C:\Users\Bernie\Desktop\HopefullyLASTOne\PictureBookV7\PictureBookV7\bin\EntityFramework.xml
 C:\Users\Bernie\Desktop\HopefullyLASTOne\PictureBookV7\PictureBookV7\bin\EntityFramework.SqlServer.xml
+C:\Users\Bernie\Desktop\HopefullyLASTOne\PictureBookV7\PictureBookV7\bin\PagedList.dll
+C:\Users\Bernie\Desktop\HopefullyLASTOne\PictureBookV7\PictureBookV7\bin\PagedList.Mvc.dll
+C:\Users\Bernie\Desktop\HopefullyLASTOne\PictureBookV7\PictureBookV7\bin\PagedList.xml
+C:\Users\Bernie\Desktop\HopefullyLASTOne\PictureBookV7\PictureBookV7\bin\PagedList.Mvc.xml

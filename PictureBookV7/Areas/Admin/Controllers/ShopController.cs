@@ -1,4 +1,5 @@
-﻿using PictureBookV7.Models.Data;
+﻿using PagedList;
+using PictureBookV7.Models.Data;
 using PictureBookV7.Models.ViewModels.Pages.Shop;
 using System;
 using System.Collections.Generic;
@@ -260,15 +261,30 @@ namespace PictureBookV7.Areas.Admin.Controllers
         {
 
             //Declare a list of ProductVM
+            List<ProductVM> listOfProductVM;
 
-            //Initialise list
+            //Set page number
+            var pageNumber = page ?? 1;
+            using (Db db = new Db())
+            {
+                //Initialise list
+                listOfProductVM = db.Products.ToArray().Where(x => catId == null || catId == 0 || x.CategoryId == catId)
+                    .Select(x => new ProductVM(x))
+                    .ToList();
 
-            //Populate categories select list
+                //Populate categories select list
+                ViewBag.Categories = new SelectList(db.Categories.ToList(), "Id", "Name");
+
+                //Set selected category
+                ViewBag.SelectedCat = catId.ToString();
+            }
 
             //Set pagination
+            var onePageOfProducts = listOfProductVM.ToPagedList(pageNumber, 5);
+            ViewBag.OnePageOfProducts = onePageOfProducts;
 
             //Return view with list
-            return View();
+            return View(listOfProductVM);
         }
     }
 }
