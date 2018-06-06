@@ -58,7 +58,7 @@ else
                     <a href="#" class="decrproduct" data-id="@item.ProductId">-</a>
                     <a href="#" class="removeproduct" data-id="@item.ProductId">Remove</a>
                 </td>
-                <td class="total"@(item.ProductId)>
+                <td class="total@(item.ProductId)">
                     £@Html.DisplayFor(modelItem => item.Total)
                 </td>
             </tr>
@@ -81,13 +81,6 @@ else
 
         $(function ()
         {
-            /****************CONFIRM PAGE DELETION****************/
-            $("a.delete").click(function ()
-            {
-                if (!confirm("Confirm page deletion")) return false;
-            });
-            /*****************************************************/
-
             /*****************INCREMENT PRODUCTS******************/
             $("a.incrproduct").click(function (e)
             {
@@ -121,18 +114,31 @@ else
                 var productId = $(this).data("id");
                 var url = "/Cart/DecrementProduct";
 
-                $.getJSON(url, { productId: productId }, function (data) {
-                    $("td.qty" + productId).html(data.qty);
+                $.getJSON(url, { productId: productId }, function (data)
+                {
+                    if (data.qty == 0)
+                    {
+                        $this.parent().parent().fadeOut("fast", function ()
+                        {
+                            location.reload();
+                        });
+                    }
+                    else
+                    {
+                        $("td.qty" + productId).html(data.qty);
 
-                    var price = data.qty * data.price;
-                    var priceHtml = "£" + price.toFixed(2);
+                        var price = data.qty * data.price;
+                        var priceHtml = "£" + price.toFixed(2);
 
-                    $("td.total" + productId).html(priceHtml);
+                        $("td.total" + productId).html(priceHtml);
 
-                    var gt = parseFloat($("td.grandtotal span").text());
-                    var grandtotal = (gt + data.price).toFixed(2);
+                        var gt = parseFloat($("td.grandtotal span").text());
+                        var grandtotal = (gt - data.price).toFixed(2);
 
-                    $("td.grandtotal span").text(grandtotal);
+                        $("td.grandtotal span").text(grandtotal);
+                    }
+
+
                 });
             });
             /*****************************************************/
