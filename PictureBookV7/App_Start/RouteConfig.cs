@@ -15,6 +15,7 @@ namespace PictureBookV7
 
             //routes.MapRoute("CategoryMenuPartial", "Shop/CategoryMenuPartial", new { controller = "Shop", action = "CategoryMenuPartial" }, new[] { "PictureBookV7.Controllers" });
 
+            routes.MapRoute("Cart", "Cart/{action}/{id}", new { controller = "Cart", action = "Index", id = UrlParameter.Optional }, new[] { "PictureBookV7.Controllers" });
             routes.MapRoute("Shop", "Shop/{action}/{name}", new { controller = "Shop", action = "Index", name = UrlParameter.Optional }, new[] { "PictureBookV7.Controllers" });
 
             routes.MapRoute("SidebarPartial", "Pages/SidebarPartial", new { controller = "Pages", action = "SidebarPartial" }, new[] { "PictureBookV7.Controllers" });
