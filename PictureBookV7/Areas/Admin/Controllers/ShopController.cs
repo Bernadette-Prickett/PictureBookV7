@@ -286,5 +286,100 @@ namespace PictureBookV7.Areas.Admin.Controllers
             //Return view with list
             return View(listOfProductVM);
         }
+
+        // GET: Admin/Shop/EditProduct/id
+        [HttpGet]
+        public ActionResult EditProduct(int id)
+        {
+            //Declare ProductVM
+            ProductVM model;
+
+            using (Db db = new Db())
+            {
+                //Get the product
+                ProductDTO dto = db.Products.Find(id);
+
+                //Ensure product exists
+                if(dto == null)
+                {
+                    return Content("The product does not exist");                
+                }
+
+                //Initialise model
+                model = new ProductVM(dto);
+
+                //Make select list
+                model.Categories = new SelectList(db.Categories.ToList(), "Id", "Name");
+
+                //Get all gallery images
+                model.GalleryImages = Directory.EnumerateFiles(Server.MapPath("~/Images/Uploads/Products/" + id + "/Gallery/Thumbs")).Select(fn => Path.GetFileName(fn));
+            }
+
+            //Return view with model
+            return View(model);
+        }
+
+        // Post: Admin/Shop/EditProduct/id
+        [HttpPost]
+        public ActionResult EditProductid(ProductVM model, HttpPostedFileBase file)
+        {
+            //Get product id
+            int id = model.Id;
+
+            //Populate categories select list and gallery images
+            using (Db db = new Db())
+            {
+                model.Categories = new SelectList(db.Categories.ToList(), "Id", "Name");
+            }
+            //Get all gallery images
+            model.GalleryImages = Directory.EnumerateFiles(Server.MapPath("~/Images/Uploads/Products/" + id + "/Gallery/Thumbs")).Select(fn => Path.GetFileName(fn));
+
+            //Check model state
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            //Make sure product name isn't being used
+            using (Db db = new Db())
+            {
+                if(db.Products.Where(x => x.Id != id).Any(x => x.Name == model.Name))
+                {
+                    ModelState.AddModelError("", "The product name has already been taken");
+                    return View(model);
+                }
+            }
+
+            //Update product
+            using (Db db = new Db())
+            {
+                ProductDTO dto = db.Products.Find(id);
+
+                dto.Name = model.Name;
+                dto.Slug = model.Name.Replace(" ", "-").ToLower();
+                dto.Price = model.Price;
+                //dto.Description = model.Description;
+                dto.CategoryId = model.CategoryId;
+                dto.ImageName = model.ImageName;
+
+                CategoryDTO catDTO = db.Categories.FirstOrDefault(x => x.Id == model.CategoryId);
+                dto.CategoryName = catDTO.Name;
+
+                db.SaveChanges();
+            }
+
+            //Set TempData message
+            TempData["SuccessMessage"] = "Product has been edited successfully";
+
+            #region Image Upload
+
+            #endregion
+
+            //Redirect
+            return RedirectToAction("EditProduct");
+           
+        }
+
+
     }
 }
