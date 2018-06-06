@@ -20,8 +20,7 @@ namespace PictureBookV7.Areas.Admin.Controllers
             using (Db db = new Db())
             {
                 //Initialise the list - 
-                //The .Where(x => !x.Deleted) only pulls back rows with Deleted = false
-                //Could also use .Where(x => x.Deleted == false)
+                //The .Where(x => !x.Deleted) only pulls back rows with Deleted = false                
                 categoryVMList = db.Categories.Where(x => !x.Deleted).ToArray().OrderBy(x => x.Sorting).Select(x => new CategoryVM(x)).ToList();
             }
 
@@ -81,6 +80,31 @@ namespace PictureBookV7.Areas.Admin.Controllers
 
             //Redirect
             return RedirectToAction("Categories");
+        }
+
+        // Post: Admin/Shop/RenameCategory
+        [HttpPost]
+        public string RenameCategory(string newCatName, int id)
+        {
+            using (Db db = new Db())
+            {
+                //Check category name hasn't already been taken
+                if (db.Categories.Any(x => x.Name == newCatName))
+                    return "titletaken";
+
+                //Get DTO
+                CategoryDTO dto = db.Categories.Find(id);
+
+                //Edit DTO
+                dto.Name = newCatName;
+                dto.Slug = newCatName.Replace(" ", "-").ToLower();
+
+                //Save
+                db.SaveChanges();
+            }
+
+            //Return
+            return "Okay";
         }
     }
 }

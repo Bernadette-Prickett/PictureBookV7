@@ -44,3 +44,8 @@ span.ajax-text
 {
     display: none;
 }
+
+.ajaxdivtd 
+{
+    position:absolute;
+}

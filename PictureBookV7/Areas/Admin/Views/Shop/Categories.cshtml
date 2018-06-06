@@ -33,7 +33,8 @@ else
     @foreach (var item in Model)
     {
         <tr id="id_@item.Id">
-            <td>            
+            <td>
+                <div class="ajaxdivtd"></div>            
                 @Html.EditorFor(modelItem => item.Name, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
             </td>
             <td>
@@ -42,8 +43,7 @@ else
         </tr>
     }
 
-    </table>
-}
+    </table>}
 
 
 @section Scripts
@@ -131,16 +131,68 @@ else
             /*****************************************************/
 
 
-            /****************CONFIRM Category DELETION****************/
+            /**************CONFIRM Category DELETION***************/
             $("a.delete").click(function ()
             {
                 if (!confirm("Confirm Category deletion")) return false;
             });
             /*****************************************************/
 
+            /******************RENAME CATEGORY********************/
+            var originalTextBoxValue;
 
+            $("table#pages input.text-box").dblclick(function ()
+            {
+                originalTextBoxValue = $(this).val;
+                $(this).attr("readonly", false);
+            });
 
+            $("table#pages input.text-box").keyup(function (e)
+            {
+                if(e.keyCode == 13)
+                {
+                    $(this).blur();
+                }
+            });
 
+            $("table#pages input.text-box").blur(function ()
+            {
+                var $this = $(this);
+                var ajaxdiv = $this.parent().find(".ajaxdictd");
+                var newCatName = $this.val();
+                var id = $this.parent().parent().attr("id").substring(3);
+                var url = "/Admin/Shop/RenameCategory";
+
+                //This will ensure that the entered category name is 2 or more characters long
+                if (newCatName.length < 2) {
+                    alert("Category name must be 2 or more characters in length");
+                    $this.attr("readonly", true);
+                    return false;
+                }
+
+                $.post(url, { newCatName: newCatName, id: id }, function (data) {
+                    var response = data.trim();
+
+                    if (response == "titletaken") {
+                        $this.val(originalTextBoxValue);
+                        ajaxdiv.html("<span class='alert alert-danger'>That category name is already taken</span>").show;
+                    }
+                    else {
+                        ajaxdiv.html("<span class='alert alert-success'>That category name has been changed successfully</span>");
+                    }
+
+                    setTimeout(function () {
+                        ajaxdiv.fadeOut("fast", function () {
+                            ajaxdiv.html("");
+                        });
+                    }, 2000);
+                }).done(function ()
+                {
+                    $this.attr("readonly", true);
+                });
+
+            });
+            /*****************************************************/
         });
 
 
