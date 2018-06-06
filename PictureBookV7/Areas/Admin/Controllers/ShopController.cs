@@ -321,7 +321,7 @@ namespace PictureBookV7.Areas.Admin.Controllers
 
         // Post: Admin/Shop/EditProduct/id
         [HttpPost]
-        public ActionResult EditProductid(ProductVM model, HttpPostedFileBase file)
+        public ActionResult EditProduct(ProductVM model, HttpPostedFileBase file)
         {
             //Get product id
             int id = model.Id;

@@ -59,6 +59,9 @@ namespace PictureBookV7.Controllers
                     qty += item.Quantity;
                     price += item.Quantity * item.Price;
                 }
+
+                model.Quantity = qty;
+                model.Price = price;               
             }
             else
             {
@@ -66,9 +69,6 @@ namespace PictureBookV7.Controllers
                 model.Quantity = 0;
                 model.Price = 0m;
             }
-
-            
-
             
 
             //Return partial view with model

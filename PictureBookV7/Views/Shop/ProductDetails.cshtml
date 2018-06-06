@@ -29,12 +29,11 @@
 @section Scripts
 {
     <script>
-
         $(function ()
         {
             /******************ADD TO CART******************/
 
-            $(".addtocart").click(function (e)
+            $("a.addtocart").click(function (e)
             {
                 e.preventDefault();
 
@@ -42,7 +41,7 @@
 
                 var url = "/Cart/AddToCartPartial";
 
-                $.get(url, { idL @Model.Id }, function (data)
+                $.get(url, { id: @Model.Id }, function (data)
                 {
                     $("ajaxcart").html(data);
                 }).done (function()
@@ -53,7 +52,7 @@
                     {
                         $("span.ajaxmsg").fadeOut("fast");
                         $("span.ajaxmsg").removeClass("ib");
-                    }, 1000)
+                    }, 2000)
                 });
             });
 
