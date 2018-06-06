@@ -102,6 +102,8 @@ else
                     var grandtotal = (gt + data.price).toFixed(2);
 
                     $("td.grandtotal span").text(grandtotal);
+
+                    parent.location.reload();
                 });
             });
             /*****************************************************/
@@ -138,6 +140,23 @@ else
                         $("td.grandtotal span").text(grandtotal);
                     }
 
+
+                });
+            });
+            /*****************************************************/
+
+            /*****************DELETE CART ITEM******************/
+            $("a.removeproduct").click(function (e)
+            {
+                e.preventDefault();
+
+                var $this = $(this);
+                var productId = $(this).data("id");
+                var url = "/cart/RemoveProduct";
+
+                $.get(url, { productId: productId }, function (data)
+                {
+                    location.reload();
 
                 });
             });
