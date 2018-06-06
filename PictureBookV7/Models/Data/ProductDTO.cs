@@ -19,6 +19,7 @@ namespace PictureBookV7.Models.Data
         public string CategoryName { get; set; }
         public int CategoryId { get; set; }
         public string ImageName { get; set; }
+        //public bool Deleted { get; set; }
 
         [ForeignKey("CategoryId")]
         //In this instance virtual is used for lazy loading

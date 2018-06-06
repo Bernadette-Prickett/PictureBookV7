@@ -358,7 +358,7 @@ namespace PictureBookV7.Areas.Admin.Controllers
                 dto.Name = model.Name;
                 dto.Slug = model.Name.Replace(" ", "-").ToLower();
                 dto.Price = model.Price;
-                //dto.Description = model.Description;
+                dto.Description = model.Description;
                 dto.CategoryId = model.CategoryId;
                 dto.ImageName = model.ImageName;
 
@@ -380,6 +380,29 @@ namespace PictureBookV7.Areas.Admin.Controllers
            
         }
 
+        // GET: Admin/Shop/DeleteProduct/id
+        public ActionResult DeleteProduct(int id)        
+        {
+            using (Db db = new Db())
+            {
+                //Get the product
+                ProductDTO dto = db.Products.Find(id);
+
+                //Delete the product
+                db.Products.Remove(dto);
+
+
+                //For some reason this is causing a problem
+                //Flag the category as deleted rather than actually delete the data as this can mess up reports
+                //dto.Deleted = true;
+
+                //Save
+                db.SaveChanges();
+            }
+
+            //Redirect
+            return RedirectToAction("Products");
+        }
 
     }
 }
