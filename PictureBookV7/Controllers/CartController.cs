@@ -1,4 +1,5 @@
-﻿using PictureBookV7.Models.ViewModels.Cart;
+﻿using PictureBookV7.Models.Data;
+using PictureBookV7.Models.ViewModels.Cart;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -71,6 +72,61 @@ namespace PictureBookV7.Controllers
             
 
             //Return partial view with model
+            return PartialView(model);
+        }
+
+        public ActionResult AddToCartPartial(int id)
+        {
+            //Initialise cartVM list
+            List<CartVM> cart = Session["cart"] as List<CartVM> ?? new List<CartVM>();
+
+            //Initialise cartVM
+            CartVM model = new CartVM();
+
+            using (Db db = new Db())
+            {
+                //Get the product
+                ProductDTO product = db.Products.Find(id);
+
+                //Check if product is already in cart
+                var productInCart = cart.FirstOrDefault(x => x.ProductId == id);
+
+                //If not, add new
+                if (productInCart == null)
+                {
+                    cart.Add(new CartVM()
+                    {
+                        ProductId = product.Id,
+                        ProductName = product.Name,
+                        Quantity = 1,
+                        Price = product.Price,
+                        Image = product.ImageName
+                    });
+                }
+                else
+                {
+                    //If yes, increment
+                    productInCart.Quantity++;
+                }                
+            }
+
+            //Get total qty and price and add to model
+            int qty = 0;
+            decimal price = 0m;
+
+            foreach (var item in cart)
+            {
+                qty += item.Quantity;
+                price += item.Quantity * item.Price;
+            }
+
+            model.Quantity = qty;
+            model.Price = price;
+
+            //Save cart back to session
+            Session["cart"] = cart;
+
+            //Return partial view wityh model
             return PartialView(model);
         }
     }

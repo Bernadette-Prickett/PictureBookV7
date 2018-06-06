@@ -171,6 +171,20 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\Uploads\Products\10\SampleBook.jpg" />
+    <Content Include="Images\Uploads\Products\10\Thumbs\SampleBook.jpg" />
+    <Content Include="Images\Uploads\Products\4\My Post%281%29.jpg" />
+    <Content Include="Images\Uploads\Products\4\Thumbs\My Post%281%29.jpg" />
+    <Content Include="Images\Uploads\Products\5\My Post%282%29.jpg" />
+    <Content Include="Images\Uploads\Products\5\Thumbs\My Post%282%29.jpg" />
+    <Content Include="Images\Uploads\Products\6\My Post%281%29.jpg" />
+    <Content Include="Images\Uploads\Products\6\Thumbs\My Post%281%29.jpg" />
+    <Content Include="Images\Uploads\Products\7\My Post.jpg" />
+    <Content Include="Images\Uploads\Products\7\Thumbs\My Post.jpg" />
+    <Content Include="Images\Uploads\Products\8\SampleBook.jpg" />
+    <Content Include="Images\Uploads\Products\8\Thumbs\SampleBook.jpg" />
+    <Content Include="Images\Uploads\Products\9\SampleBook.jpg" />
+    <Content Include="Images\Uploads\Products\9\Thumbs\SampleBook.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Views\web.config" />
@@ -573,10 +587,20 @@
     <Content Include="Views\Shop\ProductDetails.cshtml" />
     <Content Include="Views\Cart\CartPartial.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Cart\AddToCartPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="fileman\" />
+    <Folder Include="Images\Uploads\Products\10\Gallery\Thumbs\" />
+    <Folder Include="Images\Uploads\Products\3\Gallery\Thumbs\" />
+    <Folder Include="Images\Uploads\Products\3\Thumbs\" />
+    <Folder Include="Images\Uploads\Products\4\Gallery\Thumbs\" />
+    <Folder Include="Images\Uploads\Products\5\Gallery\Thumbs\" />
+    <Folder Include="Images\Uploads\Products\6\Gallery\Thumbs\" />
+    <Folder Include="Images\Uploads\Products\7\Gallery\Thumbs\" />
+    <Folder Include="Images\Uploads\Products\8\Gallery\Thumbs\" />
+    <Folder Include="Images\Uploads\Products\9\Gallery\Thumbs\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
