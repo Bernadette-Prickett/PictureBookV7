@@ -1,0 +1,13 @@
+﻿@model IEnumerable<PictureBookV7.Models.ViewModels.Pages.PageVM>
+
+
+@foreach (var item in Model)
+{
+    <li>
+        <a href="/@item.Slug">
+            @item.Title
+        </a>
+    </li>
+}
+
+
