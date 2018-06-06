@@ -10,8 +10,7 @@ namespace PictureBookV7.Areas.Admin.Controllers
 {
     public class ShopController : Controller
     {
-        // GET: Admin/Shop/Categories
-        [HttpGet]
+        // GET: Admin/Shop/Categories        
         public ActionResult Categories()
         {
             //Declare a list of models
@@ -105,6 +104,22 @@ namespace PictureBookV7.Areas.Admin.Controllers
 
             //Return
             return "Okay";
+        }
+
+        // GET: Admin/Shop/AddProduct
+        public ActionResult AddProduct()
+        {
+            //Initialise model
+            ProductVM model = new ProductVM();
+
+            //Add select list of categories to model
+            using (Db db = new Db())
+            {
+                model.Categories = new SelectList(db.Categories.ToList(), "Id", "Name");
+            }
+
+            //Return view with model
+            return View(model);
         }
     }
 }
