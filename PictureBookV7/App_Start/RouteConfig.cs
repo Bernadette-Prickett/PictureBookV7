@@ -11,7 +11,11 @@ namespace PictureBookV7
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");            
+            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
+            //routes.MapRoute("CategoryMenuPartial", "Shop/CategoryMenuPartial", new { controller = "Shop", action = "CategoryMenuPartial" }, new[] { "PictureBookV7.Controllers" });
+
+            routes.MapRoute("Shop", "Shop/{action}/{name}", new { controller = "Shop", action = "Index", name = UrlParameter.Optional }, new[] { "PictureBookV7.Controllers" });
 
             routes.MapRoute("SidebarPartial", "Pages/SidebarPartial", new { controller = "Pages", action = "SidebarPartial" }, new[] { "PictureBookV7.Controllers" });
             routes.MapRoute("PagesMenuPartial", "Pages/PagesMenuPartial", new { controller = "Pages", action = "PagesMenuPartial" }, new[] { "PictureBookV7.Controllers" });
