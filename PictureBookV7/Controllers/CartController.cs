@@ -184,5 +184,22 @@ namespace PictureBookV7.Controllers
 
             }            
         }
+
+        // GET: /Cart/RemoveProduct
+        public void RemoveProduct(int productId)
+        {
+            // Init cart list
+            List<CartVM> cart = Session["cart"] as List<CartVM>;
+
+            using (Db db = new Db())
+            {
+                // Get model from list
+                CartVM model = cart.FirstOrDefault(x => x.ProductId == productId);
+
+                // Remove model from list
+                cart.Remove(model);
+            }
+
+        }
     }
 }
