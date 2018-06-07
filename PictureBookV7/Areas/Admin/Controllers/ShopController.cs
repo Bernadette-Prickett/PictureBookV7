@@ -13,6 +13,7 @@ using System.Web.Mvc;
 
 namespace PictureBookV7.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ShopController : Controller
     {
         // GET: Admin/Shop/Categories        
