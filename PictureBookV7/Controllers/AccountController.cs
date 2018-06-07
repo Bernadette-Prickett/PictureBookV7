@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace PictureBookV7.Controllers
 {
@@ -28,6 +29,47 @@ namespace PictureBookV7.Controllers
 
             //Return view
             return View();
+        }
+
+        // POST: /Account/Login
+        [HttpPost]
+        public ActionResult Login(LoginUserVM model)
+        {
+            //Check model state
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            //Check if the user is valid
+            bool isValid = false;
+
+            using (Db db = new Db())
+            {
+                if (db.Users.Any(x => x.Username.Equals(model.Username) && x.Password.Equals(model.Password)))
+                {
+                    isValid = true;
+                }
+            }
+
+            if (!isValid)
+            {
+                ModelState.AddModelError("", "Invalid Username or password.");
+                return View(model);
+            }
+            else
+            {
+                FormsAuthentication.SetAuthCookie(model.Username, model.RememberMe);
+                return Redirect(FormsAuthentication.GetRedirectUrl(model.Username, model.RememberMe));
+            }
+        }
+
+        // GET: /Account/Logout
+        [Authorize]
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            return Redirect("~/Account/Login");
         }
 
         // GET: Account/Create-Account
@@ -99,6 +141,116 @@ namespace PictureBookV7.Controllers
 
             //Redirect
             return Redirect("~/Account/Login");
+        }
+
+        [Authorize]
+        public ActionResult UserNavPartial()
+        {
+            //Get username
+            string username = User.Identity.Name;
+
+            //Declare model
+            UserNavPartialVM model;
+
+            using (Db db = new Db())
+            {
+                //Get the user
+                UserDTO dto = db.Users.FirstOrDefault(x => x.Username == username);
+
+                //Build the model
+                model = new UserNavPartialVM()
+                {
+                    FirstName = dto.FirstName,
+                    LastName = dto.LastName
+                };
+            }
+
+            //Return partial view with model
+            return PartialView(model);
+        }
+
+        // GET: /Account/User-Profile
+        [HttpGet]
+        [ActionName("User-Profile")]
+        [Authorize]
+        public ActionResult UserProfile()
+        {
+            //Get username
+            string username = User.Identity.Name;
+
+            //Declare model
+            UserProfileVM model;
+
+            using (Db db = new Db())
+            {
+                //Get user
+                UserDTO dto = db.Users.FirstOrDefault(x => x.Username == username);
+
+                //Build model
+                model = new UserProfileVM(dto);
+            }
+
+            //Return view with model
+            return View("UserProfile", model);
+        }
+
+        // POST: /Account/User-Profile
+        [HttpPost]
+        [ActionName("User-Profile")]
+        [Authorize]
+        public ActionResult UserProfile(UserProfileVM model)
+        {
+            //Check model state
+            if (!ModelState.IsValid)
+            {
+                return View("UserProfile", model);
+            }
+
+            //Check if passwords match if need be
+            if (!string.IsNullOrWhiteSpace(model.Password))
+            {
+                if (!model.Password.Equals(model.ConfirmPassword))
+                {
+                    ModelState.AddModelError("", "Passwords do not match");
+                    return View("UserProfile", model);
+                }
+            }
+
+            using (Db db = new Db())
+            {
+                //Get username
+                string username = User.Identity.Name;
+
+                //Make sure username is unique
+                if (db.Users.Where(x => x.Id != model.Id).Any(x => x.Username == username))
+                {
+                    ModelState.AddModelError("", "Username " + model.Username + " already exists");
+                    model.Username = "";
+                    return View("UserProfile", model);
+                }
+
+                //Edit DTO
+                UserDTO dto = db.Users.Find(model.Id);
+
+                dto.FirstName = model.FirstName;
+                dto.LastName = model.LastName;
+                dto.EmailAddress = model.EmailAddress;
+                dto.Username = model.Username;
+
+                if (!string.IsNullOrWhiteSpace(model.Password))
+                {
+                    dto.Password = model.Password;
+                }
+
+                //Save
+                db.SaveChanges();
+            }
+
+            //Set TempData message
+            TempData["SuccessMessage"] = "Your profile has been successfully edited";
+
+            //Redirect
+            return Redirect("~/Account/User-Profile");
         }
 
     }
