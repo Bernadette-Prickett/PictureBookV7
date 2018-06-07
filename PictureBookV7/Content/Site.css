@@ -21,6 +21,12 @@ span.ajax-text
     display: none;
 }
 
+table.sorting.categories td 
+{
+    padding: 20px !important;
+}
+
+
 .ajaxdivtd 
 {
     position:absolute;
@@ -83,5 +89,5 @@ form.paypalform
 
 .row
 {
-    position: absolute;
+    position: relative;
 }
