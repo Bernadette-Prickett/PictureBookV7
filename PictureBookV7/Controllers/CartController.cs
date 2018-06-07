@@ -1,4 +1,17 @@
-﻿using PictureBookV7.Models.Data;
+﻿// ***********************************************************************
+// Assembly         : PictureBookV7
+// Author           : Bernie
+// Created          : 06-06-2018
+//
+// Last Modified By : Bernie
+// Last Modified On : 06-07-2018
+// ***********************************************************************
+// <copyright file="CartController.cs" company="">
+//     Copyright ©  2018
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using PictureBookV7.Models.Data;
 using PictureBookV7.Models.ViewModels.Cart;
 using System;
 using System.Collections.Generic;
@@ -10,9 +23,17 @@ using System.Web.Mvc;
 
 namespace PictureBookV7.Controllers
 {
+    /// <summary>
+    /// Class CartController.
+    /// </summary>
+    /// <seealso cref="System.Web.Mvc.Controller" />
     public class CartController : Controller
     {
         // GET: Cart
+        /// <summary>
+        /// Indexes this instance.
+        /// </summary>
+        /// <returns>ActionResult.</returns>
         public ActionResult Index()
         {
             //Initialise the cart list
@@ -39,6 +60,10 @@ namespace PictureBookV7.Controllers
             return View(cart);
         }
 
+        /// <summary>
+        /// Carts the partial.
+        /// </summary>
+        /// <returns>ActionResult.</returns>
         public ActionResult CartPartial()
         {
             //Initialise CartVM
@@ -77,6 +102,11 @@ namespace PictureBookV7.Controllers
             return PartialView(model);
         }
 
+        /// <summary>
+        /// Adds to cart partial.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>ActionResult.</returns>
         public ActionResult AddToCartPartial(int id)
         {
             //Initialise cartVM list
@@ -133,6 +163,11 @@ namespace PictureBookV7.Controllers
         }
 
         // GET: Cart/IncrementProduct
+        /// <summary>
+        /// Increments the product.
+        /// </summary>
+        /// <param name="productId">The product identifier.</param>
+        /// <returns>JsonResult.</returns>
         public JsonResult IncrementProduct(int productId)
         {
             //Initialise cart list
@@ -157,6 +192,11 @@ namespace PictureBookV7.Controllers
         }
 
         // GET: Cart/DecrementProduct
+        /// <summary>
+        /// Decrements the product.
+        /// </summary>
+        /// <param name="productId">The product identifier.</param>
+        /// <returns>ActionResult.</returns>
         public ActionResult DecrementProduct(int productId)
         {
             //Initialise cart list
@@ -188,6 +228,10 @@ namespace PictureBookV7.Controllers
         }
 
         // GET: /Cart/RemoveProduct
+        /// <summary>
+        /// Removes the product.
+        /// </summary>
+        /// <param name="productId">The product identifier.</param>
         public void RemoveProduct(int productId)
         {
             // Initialise cart list
@@ -204,6 +248,10 @@ namespace PictureBookV7.Controllers
 
         }
 
+        /// <summary>
+        /// Paypals the partial.
+        /// </summary>
+        /// <returns>ActionResult.</returns>
         public ActionResult PaypalPartial()
         {
             List<CartVM> cart = Session["cart"] as List<CartVM>;
@@ -212,6 +260,9 @@ namespace PictureBookV7.Controllers
         }
 
         // POST: /Cart/PlaceOrder
+        /// <summary>
+        /// Places the order.
+        /// </summary>
         [HttpPost]
         public void PlaceOrder()
         {

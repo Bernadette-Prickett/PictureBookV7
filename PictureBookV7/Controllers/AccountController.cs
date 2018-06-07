@@ -1,4 +1,17 @@
-﻿using PictureBookV7.Models.Data;
+﻿// ***********************************************************************
+// Assembly         : PictureBookV7
+// Author           : Bernie
+// Created          : 06-07-2018
+//
+// Last Modified By : Bernie
+// Last Modified On : 06-07-2018
+// ***********************************************************************
+// <copyright file="AccountController.cs" company="">
+//     Copyright ©  2018
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using PictureBookV7.Models.Data;
 using PictureBookV7.Models.ViewModels.Account;
 using PictureBookV7.Views.Shop;
 using System;
@@ -9,16 +22,28 @@ using System.Web.Mvc;
 using System.Web.Security;
 
 namespace PictureBookV7.Controllers
-{    
+{
+    /// <summary>
+    /// Class AccountController.
+    /// </summary>
+    /// <seealso cref="System.Web.Mvc.Controller" />
     public class AccountController : Controller
     {
         // GET: Account
+        /// <summary>
+        /// Indexes this instance.
+        /// </summary>
+        /// <returns>ActionResult.</returns>
         public ActionResult Index()
         {
             return Redirect("~/Account/Login");
         }
 
         // GET: /Account/Login
+        /// <summary>
+        /// Logins this instance.
+        /// </summary>
+        /// <returns>ActionResult.</returns>
         [HttpGet]
         public ActionResult Login()
         {
@@ -33,6 +58,11 @@ namespace PictureBookV7.Controllers
         }
 
         // POST: /Account/Login
+        /// <summary>
+        /// Logins the specified model.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <returns>ActionResult.</returns>
         [HttpPost]
         public ActionResult Login(LoginUserVM model)
         {
@@ -66,6 +96,10 @@ namespace PictureBookV7.Controllers
         }
 
         // GET: /Account/Logout
+        /// <summary>
+        /// Logouts this instance.
+        /// </summary>
+        /// <returns>ActionResult.</returns>
         [Authorize]
         public ActionResult Logout()
         {
@@ -74,6 +108,10 @@ namespace PictureBookV7.Controllers
         }
 
         // GET: Account/Create-Account
+        /// <summary>
+        /// Creates the account.
+        /// </summary>
+        /// <returns>ActionResult.</returns>
         [ActionName("Create-Account")]
         public ActionResult CreateAccount()
         {
@@ -81,6 +119,11 @@ namespace PictureBookV7.Controllers
         }
 
         // POST: Account/Create-Account
+        /// <summary>
+        /// Creates the account.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <returns>ActionResult.</returns>
         [ActionName("Create-Account")]
         [HttpPost]
         public ActionResult CreateAccount(UserVM model)
@@ -144,6 +187,10 @@ namespace PictureBookV7.Controllers
             return Redirect("~/Account/Login");
         }
 
+        /// <summary>
+        /// Users the nav partial.
+        /// </summary>
+        /// <returns>ActionResult.</returns>
         [Authorize]
         public ActionResult UserNavPartial()
         {
@@ -171,6 +218,10 @@ namespace PictureBookV7.Controllers
         }
 
         // GET: /Account/User-Profile
+        /// <summary>
+        /// Users the profile.
+        /// </summary>
+        /// <returns>ActionResult.</returns>
         [HttpGet]
         [ActionName("User-Profile")]
         [Authorize]
@@ -196,6 +247,11 @@ namespace PictureBookV7.Controllers
         }
 
         // POST: /Account/User-Profile
+        /// <summary>
+        /// Users the profile.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <returns>ActionResult.</returns>
         [HttpPost]
         [ActionName("User-Profile")]
         [Authorize]
@@ -255,6 +311,10 @@ namespace PictureBookV7.Controllers
         }
 
         // GET: /Account/Orders
+        /// <summary>
+        /// Orderses this instance.
+        /// </summary>
+        /// <returns>ActionResult.</returns>
         [Authorize(Roles = "Customer")]
         public ActionResult Orders()
         {

@@ -15,7 +15,7 @@ div.new-cat
     position: relative;
 }
 
-/*This is supposed stop thead ajax spinny loader from showing but it doesn't seem to be working*/
+/*This is supposed stop thead ajax spinny loader*/
 span.ajax-text
 {
     display: none;

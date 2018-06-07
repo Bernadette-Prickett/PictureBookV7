@@ -1,4 +1,17 @@
-﻿using PictureBookV7.Models.Data;
+﻿// ***********************************************************************
+// Assembly         : PictureBookV7
+// Author           : Bernie
+// Created          : 06-01-2018
+//
+// Last Modified By : Bernie
+// Last Modified On : 06-07-2018
+// ***********************************************************************
+// <copyright file="PagesController.cs" company="">
+//     Copyright ©  2018
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using PictureBookV7.Models.Data;
 using PictureBookV7.Models.ViewModels.Pages;
 using System;
 using System.Collections.Generic;
@@ -8,10 +21,18 @@ using System.Web.Mvc;
 
 namespace PictureBookV7.Areas.Admin.Controllers
 {
+    /// <summary>
+    /// Class PagesController.
+    /// </summary>
+    /// <seealso cref="System.Web.Mvc.Controller" />
     [Authorize(Roles = "Admin")]
     public class PagesController : Controller
     {
         // GET: Admin/Pages
+        /// <summary>
+        /// Indexes this instance.
+        /// </summary>
+        /// <returns>ActionResult.</returns>
         public ActionResult Index()
         {
             //Declare a list of PageVM
@@ -29,6 +50,10 @@ namespace PictureBookV7.Areas.Admin.Controllers
         }
 
         // GET: Admin/Pages/AddPage
+        /// <summary>
+        /// Adds the page.
+        /// </summary>
+        /// <returns>ActionResult.</returns>
         [HttpGet]
         public ActionResult AddPage()
         {
@@ -36,6 +61,11 @@ namespace PictureBookV7.Areas.Admin.Controllers
         }
 
         // Post: Admin/Pages/AddPage
+        /// <summary>
+        /// Adds the page.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <returns>ActionResult.</returns>
         [HttpPost]
         public ActionResult AddPage(PageVM model)
         {
@@ -96,6 +126,11 @@ namespace PictureBookV7.Areas.Admin.Controllers
         }
 
         // GET: Admin/Pages/EditPage/id
+        /// <summary>
+        /// Edits the page.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>ActionResult.</returns>
         [HttpGet]
         public ActionResult EditPage(int id)
         {
@@ -122,6 +157,11 @@ namespace PictureBookV7.Areas.Admin.Controllers
         }
 
         // Post: Admin/Pages/EditPage/id
+        /// <summary>
+        /// Edits the page.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <returns>ActionResult.</returns>
         [HttpPost]
         public ActionResult EditPage(PageVM model)
         { 
@@ -183,6 +223,11 @@ namespace PictureBookV7.Areas.Admin.Controllers
         }
 
         // Get Admin/Pages/PageDetails/id        
+        /// <summary>
+        /// Pages the details.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>ActionResult.</returns>
         public ActionResult PageDetails(int id)
         {
 
@@ -210,6 +255,11 @@ namespace PictureBookV7.Areas.Admin.Controllers
         }
 
         // Get Admin/Pages/DeletePage/id
+        /// <summary>
+        /// Deletes the page.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>ActionResult.</returns>
         public ActionResult DeletePage(int id)
         {
             using (Db db = new Db())
@@ -229,6 +279,11 @@ namespace PictureBookV7.Areas.Admin.Controllers
         }
 
         // Post: Admin/Pages/ReorderPages
+        /// <summary>
+        /// Reorders the pages.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>ActionResult.</returns>
         [HttpPost]
         public ActionResult ReorderPages(int[] id)
         {
@@ -255,6 +310,10 @@ namespace PictureBookV7.Areas.Admin.Controllers
         }
 
         // Get Admin/Pages/EditSidebar
+        /// <summary>
+        /// Edits the sidebar.
+        /// </summary>
+        /// <returns>ActionResult.</returns>
         [HttpGet]
         public ActionResult EditSidebar()
         {
@@ -275,6 +334,11 @@ namespace PictureBookV7.Areas.Admin.Controllers
         }
 
         // Get Admin/Pages/EditSidebar
+        /// <summary>
+        /// Edits the sidebar.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <returns>ActionResult.</returns>
         [HttpPost]
         public ActionResult EditSidebar(SidebarVM model)
         {

@@ -1,4 +1,17 @@
-﻿using PagedList;
+﻿// ***********************************************************************
+// Assembly         : PictureBookV7
+// Author           : Bernie
+// Created          : 06-05-2018
+//
+// Last Modified By : Bernie
+// Last Modified On : 06-07-2018
+// ***********************************************************************
+// <copyright file="ShopController.cs" company="">
+//     Copyright ©  2018
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using PagedList;
 using PictureBookV7.Areas.Admin.Models.ViewModels.Shop;
 using PictureBookV7.Models.Data;
 using PictureBookV7.Models.ViewModels.Pages.Shop;
@@ -13,10 +26,18 @@ using System.Web.Mvc;
 
 namespace PictureBookV7.Areas.Admin.Controllers
 {
+    /// <summary>
+    /// Class ShopController.
+    /// </summary>
+    /// <seealso cref="System.Web.Mvc.Controller" />
     [Authorize(Roles = "Admin")]
     public class ShopController : Controller
     {
         // GET: Admin/Shop/Categories        
+        /// <summary>
+        /// Categorieses this instance.
+        /// </summary>
+        /// <returns>ActionResult.</returns>
         public ActionResult Categories()
         {
             //Declare a list of models
@@ -34,6 +55,11 @@ namespace PictureBookV7.Areas.Admin.Controllers
         }
 
         // Post: Admin/Shop/AddNewCategory
+        /// <summary>
+        /// Adds the new category.
+        /// </summary>
+        /// <param name="catName">Name of the cat.</param>
+        /// <returns>System.String.</returns>
         [HttpPost]
         public string AddNewCategory(string catName)
         {
@@ -69,6 +95,11 @@ namespace PictureBookV7.Areas.Admin.Controllers
         }
 
         // Get Admin/Shop/DeleteCategory/id
+        /// <summary>
+        /// Deletes the category.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>ActionResult.</returns>
         public ActionResult DeleteCategory(int id)
         {
             using (Db db = new Db())
@@ -88,6 +119,12 @@ namespace PictureBookV7.Areas.Admin.Controllers
         }
 
         // Post: Admin/Shop/RenameCategory
+        /// <summary>
+        /// Renames the category.
+        /// </summary>
+        /// <param name="newCatName">New name of the cat.</param>
+        /// <param name="id">The identifier.</param>
+        /// <returns>System.String.</returns>
         [HttpPost]
         public string RenameCategory(string newCatName, int id)
         {
@@ -113,6 +150,10 @@ namespace PictureBookV7.Areas.Admin.Controllers
         }
 
         // GET: Admin/Shop/AddProduct
+        /// <summary>
+        /// Adds the product.
+        /// </summary>
+        /// <returns>ActionResult.</returns>
         [HttpGet]
         public ActionResult AddProduct()
         {
@@ -130,6 +171,12 @@ namespace PictureBookV7.Areas.Admin.Controllers
         }
 
         // Post: Admin/Shop/AddProduct
+        /// <summary>
+        /// Adds the product.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <param name="file">The file.</param>
+        /// <returns>ActionResult.</returns>
         [HttpPost]
         public ActionResult AddProduct(ProductVM model, HttpPostedFileBase file)
         {
@@ -260,6 +307,12 @@ namespace PictureBookV7.Areas.Admin.Controllers
         }
 
         // GET: Admin/Shop/Products
+        /// <summary>
+        /// Productses the specified page.
+        /// </summary>
+        /// <param name="page">The page.</param>
+        /// <param name="catId">The cat identifier.</param>
+        /// <returns>ActionResult.</returns>
         public ActionResult Products(int? page, int? catId)
         {
 
@@ -291,6 +344,11 @@ namespace PictureBookV7.Areas.Admin.Controllers
         }
 
         // GET: Admin/Shop/EditProduct/id
+        /// <summary>
+        /// Edits the product.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>ActionResult.</returns>
         [HttpGet]
         public ActionResult EditProduct(int id)
         {
@@ -323,6 +381,12 @@ namespace PictureBookV7.Areas.Admin.Controllers
         }
 
         // Post: Admin/Shop/EditProduct/id
+        /// <summary>
+        /// Edits the product.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <param name="file">The file.</param>
+        /// <returns>ActionResult.</returns>
         [HttpPost]
         public ActionResult EditProduct(ProductVM model, HttpPostedFileBase file)
         {
@@ -384,6 +448,11 @@ namespace PictureBookV7.Areas.Admin.Controllers
         }
 
         // GET: Admin/Shop/DeleteProduct/id
+        /// <summary>
+        /// Deletes the product.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>ActionResult.</returns>
         public ActionResult DeleteProduct(int id)        
         {
             using (Db db = new Db())
@@ -408,6 +477,11 @@ namespace PictureBookV7.Areas.Admin.Controllers
         }
 
         // Post: Admin/Shop/SaveGalleryImages
+        /// <summary>
+        /// Saves the gallery images.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>ActionResult.</returns>
         [HttpPost]
         public ActionResult SaveGalleryImages(int id)
         {
@@ -441,6 +515,10 @@ namespace PictureBookV7.Areas.Admin.Controllers
         }
 
         // GET: Admin/Shop/Orders
+        /// <summary>
+        /// Orderses this instance.
+        /// </summary>
+        /// <returns>ActionResult.</returns>
         public ActionResult Orders()
         {
             //Init list of OrdersForAdminVM

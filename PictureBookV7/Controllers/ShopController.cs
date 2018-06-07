@@ -1,4 +1,17 @@
-﻿using PictureBookV7.Models.Data;
+﻿// ***********************************************************************
+// Assembly         : PictureBookV7
+// Author           : Bernie
+// Created          : 06-06-2018
+//
+// Last Modified By : Bernie
+// Last Modified On : 06-06-2018
+// ***********************************************************************
+// <copyright file="ShopController.cs" company="">
+//     Copyright ©  2018
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using PictureBookV7.Models.Data;
 using PictureBookV7.Models.ViewModels.Pages.Shop;
 using System;
 using System.Collections.Generic;
@@ -9,14 +22,26 @@ using System.Web.Mvc;
 
 namespace PictureBookV7.Controllers
 {
+    /// <summary>
+    /// Class ShopController.
+    /// </summary>
+    /// <seealso cref="System.Web.Mvc.Controller" />
     public class ShopController : Controller
     {
         // GET: Shop
+        /// <summary>
+        /// Indexes this instance.
+        /// </summary>
+        /// <returns>ActionResult.</returns>
         public ActionResult Index()
         {
             return RedirectToAction("Index", "Pages");
         }
 
+        /// <summary>
+        /// Categories the menu partial.
+        /// </summary>
+        /// <returns>ActionResult.</returns>
         public ActionResult CategoryMenuPartial()
         {
 
@@ -34,6 +59,11 @@ namespace PictureBookV7.Controllers
         }
 
         // GET: Shop/Category/Name
+        /// <summary>
+        /// Categories the specified name.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <returns>ActionResult.</returns>
         public ActionResult Category(string name)
         {
             //Declare a list of ProductVM
@@ -58,6 +88,11 @@ namespace PictureBookV7.Controllers
         }
 
         // GET: Shop/Product-Details/Name
+        /// <summary>
+        /// Products the details.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <returns>ActionResult.</returns>
         [ActionName("Product-Details")]
         public ActionResult ProductDetails(string name)
         {

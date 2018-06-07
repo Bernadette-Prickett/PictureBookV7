@@ -1,4 +1,17 @@
-﻿using PictureBookV7.Models.Data;
+﻿// ***********************************************************************
+// Assembly         : PictureBookV7
+// Author           : Bernie
+// Created          : 06-06-2018
+//
+// Last Modified By : Bernie
+// Last Modified On : 06-06-2018
+// ***********************************************************************
+// <copyright file="PagesController.cs" company="">
+//     Copyright ©  2018
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using PictureBookV7.Models.Data;
 using PictureBookV7.Models.ViewModels.Pages;
 using System;
 using System.Collections.Generic;
@@ -8,9 +21,18 @@ using System.Web.Mvc;
 
 namespace PictureBookV7.Controllers
 {
+    /// <summary>
+    /// Class PagesController.
+    /// </summary>
+    /// <seealso cref="System.Web.Mvc.Controller" />
     public class PagesController : Controller
     {
         // GET: Index/{page}
+        /// <summary>
+        /// Indexes the specified page.
+        /// </summary>
+        /// <param name="page">The page.</param>
+        /// <returns>ActionResult.</returns>
         public ActionResult Index(string page = "")
         {
             //Get/Set page slug(url)
@@ -56,6 +78,10 @@ namespace PictureBookV7.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Pageses the menu partial.
+        /// </summary>
+        /// <returns>ActionResult.</returns>
         public ActionResult PagesMenuPartial()
         {
             //Declare a list of PageVM
@@ -71,6 +97,10 @@ namespace PictureBookV7.Controllers
             return PartialView(pageVMList);
         }
 
+        /// <summary>
+        /// Sidebars the partial.
+        /// </summary>
+        /// <returns>ActionResult.</returns>
         public ActionResult SidebarPartial()
         {
 

@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PictureBookV7.BundleConfig" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\BundleConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PictureBookV7.FilterConfig" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\FilterConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PictureBookV7.RouteConfig" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\RouteConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PictureBookV7.MvcApplication" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAQAAAAAAAAA=</HashCode>
+      <FileName>Global.asax.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PictureBookV7.Areas.Admin.AdminAreaRegistration" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Areas\Admin\AdminAreaRegistration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PictureBookV7.Areas.Admin.Controllers.DashboardController" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Areas\Admin\Controllers\DashboardController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PictureBookV7.Areas.Admin.Controllers.PagesController" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAQEAAAAAAAAAAAAAAAAACAAAggAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Areas\Admin\Controllers\PagesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PictureBookV7.Areas.Admin.Controllers.ShopController" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAEAAAAAIoAAACAAAAQAgAAAAAEAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Areas\Admin\Controllers\ShopController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PictureBookV7.Areas.Admin.Models.ViewModels.Shop.OrdersForAdminVM" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAQAAAAAAAAAAQAAAAAAECAAAAAA=</HashCode>
+      <FileName>Areas\Admin\Models\ViewModels\Shop\OrdersForAdminVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PictureBookV7.Controllers.AccountController" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAgAAAAAABAIAAAQAAAAAAAEQAAAAAAA=</HashCode>
+      <FileName>Controllers\AccountController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PictureBookV7.Controllers.CartController" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAGAAAAAAAAAIAAAAACAAQAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\CartController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PictureBookV7.Controllers.PagesController" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEEAAAAAAQA=</HashCode>
+      <FileName>Controllers\PagesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PictureBookV7.Controllers.ShopController" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAEAAAAACAE=</HashCode>
+      <FileName>Controllers\ShopController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PictureBookV7.Models.Data.CategoryDTO" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAEAQQAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Models\Data\CategoryDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PictureBookV7.Models.Data.Db" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAACAAAAAAAAAgABAAAAAAAgIAEAgAAAAAAAAAAAQ=</HashCode>
+      <FileName>Models\Data\Db.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PictureBookV7.Models.Data.OrderDetailsDTO" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAECACAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAgAAAAAQ=</HashCode>
+      <FileName>Models\Data\OrderDetailsDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PictureBookV7.Models.Data.OrderDTO" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAACAAAAAAAAAAAAAAAAgAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Models\Data\OrderDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PictureBookV7.Models.Data.PageDTO" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAEAAAAABAAAQAAAAAAAAABAAAAQAAAA=</HashCode>
+      <FileName>Models\Data\PageDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PictureBookV7.Models.Data.ProductDTO" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQAgAgAAAAAAAAQAACAABAAAAAAAAAQACAA=</HashCode>
+      <FileName>Models\Data\ProductDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PictureBookV7.Models.Data.RoleDTO" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Data\RoleDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PictureBookV7.Models.Data.SidebarDTO" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Data\SidebarDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PictureBookV7.Models.Data.UserDTO" Collapsed="true">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAEAAAAAAAAAAAQAAAAAAAAAAAAACAAAAAgAAAAg=</HashCode>
+      <FileName>Models\Data\UserDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PictureBookV7.Models.Data.UserRoleDTO" Collapsed="true">
+    <Position X="4" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAIAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Data\UserRoleDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PictureBookV7.Models.ViewModels.Account.LoginUserVM" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAACAAAAAAAgAAA=</HashCode>
+      <FileName>Models\ViewModels\Account\LoginUserVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PictureBookV7.Models.ViewModels.Account.OrdersForUsersVM" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAQAAAAAAECAAAAAA=</HashCode>
+      <FileName>Models\ViewModels\Account\OrdersForUsersVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PictureBookV7.Models.ViewModels.Account.UserNavPartialVM" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Models\ViewModels\Account\UserNavPartialVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PictureBookV7.Models.ViewModels.Account.UserProfileVM" Collapsed="true">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAEAAAAAAAAAAAQAAAAAAAAAAAAACAAAAAgAAIAg=</HashCode>
+      <FileName>Models\ViewModels\Account\UserProfileVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PictureBookV7.Models.ViewModels.Account.UserVM" Collapsed="true">
+    <Position X="5.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAEAAAAAAAAAAAQAAAAAAAAAAAAACAAAAAgAAIAg=</HashCode>
+      <FileName>Models\ViewModels\Account\UserVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PictureBookV7.Models.ViewModels.Cart.CartVM" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAQAAAAAAAAAAAAAAAAAAQBAAAAAAgAAIAAA=</HashCode>
+      <FileName>Models\ViewModels\Cart\CartVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PictureBookV7.Models.ViewModels.Pages.PageVM" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAEAAAAABAAAQAAAAAAAAABAAAAQAAAA=</HashCode>
+      <FileName>Models\ViewModels\Pages\PageVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PictureBookV7.Models.ViewModels.Pages.SidebarVM" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ViewModels\Pages\SidebarVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PictureBookV7.Models.ViewModels.Pages.Shop.CategoryVM" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQQAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Models\ViewModels\Pages\Shop\CategoryVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PictureBookV7.Models.ViewModels.Pages.Shop.ProductVM" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQAgAgAAAAAAAAQAACAAFAEAAAAAAAQAAAA=</HashCode>
+      <FileName>Models\ViewModels\Pages\Shop\ProductVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PictureBookV7.Views.Shop.OrderVM" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Views\Shop\OrderVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
