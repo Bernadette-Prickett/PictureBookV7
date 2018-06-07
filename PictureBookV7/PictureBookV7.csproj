@@ -140,6 +140,7 @@
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Admin\Controllers\PagesController.cs" />
     <Compile Include="Areas\Admin\Controllers\ShopController.cs" />
+    <Compile Include="Areas\Admin\Models\ViewModels\Shop\OrdersForAdminVM.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\PagesController.cs" />
@@ -149,6 +150,8 @@
     </Compile>
     <Compile Include="Models\Data\CategoryDTO.cs" />
     <Compile Include="Models\Data\Db.cs" />
+    <Compile Include="Models\Data\OrderDetailsDTO.cs" />
+    <Compile Include="Models\Data\OrderDTO.cs" />
     <Compile Include="Models\Data\PageDTO.cs" />
     <Compile Include="Models\Data\ProductDTO.cs" />
     <Compile Include="Models\Data\RoleDTO.cs" />
@@ -165,6 +168,7 @@
     <Compile Include="Models\ViewModels\Pages\Shop\ProductVM.cs" />
     <Compile Include="Models\ViewModels\Pages\SidebarVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Shop\OrderVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\PictureBookV7.mdf" />
@@ -218,6 +222,7 @@
     <Content Include="Areas\Admin\Views\Shop\AddProduct.cshtml" />
     <Content Include="Areas\Admin\Views\Shop\Products.cshtml" />
     <Content Include="Areas\Admin\Views\Shop\EditProduct.cshtml" />
+    <Content Include="Areas\Admin\Views\Shop\Orders.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\ckeditor\ckeditor_source.js" />
     <Content Include="Scripts\ckeditor\config.js" />
@@ -600,9 +605,9 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\UserProfile.cshtml" />
     <Content Include="Views\Account\UserNavPartial.cshtml" />
+    <Content Include="Views\Cart\PaypalPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="fileman\" />
     <Folder Include="Images\Uploads\Products\10\Gallery\Thumbs\" />
     <Folder Include="Images\Uploads\Products\3\Gallery\Thumbs\" />

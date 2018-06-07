@@ -278,7 +278,7 @@ namespace PictureBookV7.Areas.Admin.Controllers
         public ActionResult EditSidebar(SidebarVM model)
         {
 
-            using (Db db = new Models.Data.Db())
+            using (Db db = new Db())
             {
                 //Get the DTO
                 SidebarDTO dto = db.Sidebar.Find(1);
