@@ -188,7 +188,7 @@ namespace PictureBookV7.Controllers
         // GET: /Cart/RemoveProduct
         public void RemoveProduct(int productId)
         {
-            // Init cart list
+            // Initialise cart list
             List<CartVM> cart = Session["cart"] as List<CartVM>;
 
             using (Db db = new Db())
